@@ -11,7 +11,9 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
-    settime;
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
   };
   return (
     <div className="prompt_card">
@@ -38,7 +40,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         <div
           className="copy_btn"
           onClick={() => {
-            handleCopy;
+            handleCopy();
           }}
         >
           <Image
