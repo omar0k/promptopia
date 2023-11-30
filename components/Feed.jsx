@@ -37,6 +37,9 @@ const Feed = () => {
     };
     fetchPosts();
   }, []);
+  const handleTagClick = (postId) => {
+    setSearchText(postId);
+  };
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
@@ -49,7 +52,7 @@ const Feed = () => {
           className="search_input peer"
         />
       </form>
-      <PromptCardList data={filteredPosts} handleTagClick={() => {}} />
+      <PromptCardList data={filteredPosts} handleTagClick={handleTagClick} />
     </section>
   );
 };
