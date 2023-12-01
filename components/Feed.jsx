@@ -22,7 +22,6 @@ const Feed = () => {
     setSearchText(e.target.value);
   };
   const filteredPosts = posts.filter((post) => {
-    console.log(post);
     return (
       post.prompt.toLowerCase().includes(searchText.toLowerCase()) ||
       post.tag.toLowerCase().includes(searchText.toLowerCase()) ||
